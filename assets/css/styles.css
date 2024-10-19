@@ -112,3 +112,10 @@ body {
 .menu-item a.has-submenu {
   cursor: pointer;
 }
+/* 콘텐츠 컨테이너 스타일 */
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
