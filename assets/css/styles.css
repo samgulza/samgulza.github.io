@@ -61,3 +61,13 @@ body {
 .menu-item a:hover {
   background-color: #e0e0e0;
 }
+
+@media (max-width: 600px) {
+  .splash-screen h1 {
+    font-size: 2em;
+  }
+  .menu-item a {
+    font-size: 1.2em;
+    width: 200px;
+  }
+}
