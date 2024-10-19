@@ -1,0 +1,18 @@
+title: "삼성서울병원 암7서"
+description: "수술 전/후 교육 및 퇴원 교육 자료"
+baseurl: "samgulza.github.io" # 프로젝트에 따라 설정
+url: "https://samgulza.github.io" # 사이트 주소 (GitHub Pages 사용 시)
+markdown: kramdown
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude
+exclude:
+  - "admin"
+
+# Permalinks
+permalink: /:categories/:title/
