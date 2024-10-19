@@ -71,3 +71,44 @@ body {
     width: 200px;
   }
 }
+/* 기존 스타일은 그대로 유지 */
+
+/* 서브메뉴 스타일 */
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+/* 서브메뉴가 열렸을 때의 스타일 */
+.submenu.open {
+  max-height: 500px; /* 충분히 큰 값으로 설정 */
+  opacity: 1;
+}
+
+/* 서브메뉴 아이템 스타일 */
+.submenu li {
+  margin: 10px 0;
+}
+
+.submenu li a {
+  background-color: #e8e8e8;
+  color: #000000;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: block;
+  width: 220px;
+  margin: 0 auto;
+}
+
+.submenu li a:hover {
+  background-color: #d0d0d0;
+}
+
+/* 메인 메뉴 아이템 수정 */
+.menu-item a.has-submenu {
+  cursor: pointer;
+}
