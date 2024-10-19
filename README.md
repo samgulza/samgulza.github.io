@@ -1,1 +1,0 @@
-# samgulza.github.io
