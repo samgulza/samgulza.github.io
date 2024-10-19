@@ -1,3 +1,4 @@
+/* 기본 스타일 설정 */
 body {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@ body {
   background-color: #ffffff;
 }
 
+/* 스플래시 스크린 스타일 */
 .splash-screen {
   background-color: #0c4da2;
   color: #ffffff;
@@ -25,12 +27,13 @@ body {
   font-weight: bold;
 }
 
+/* 메인 컨텐츠 스타일 */
 .container {
-  display: none; /* 초기에는 숨김 */
-  height: 100vh;
+  display: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* 상하 좌우 여백 추가 */
 }
 
 .menu {
@@ -62,17 +65,6 @@ body {
   background-color: #e0e0e0;
 }
 
-@media (max-width: 600px) {
-  .splash-screen h1 {
-    font-size: 2em;
-  }
-  .menu-item a {
-    font-size: 1.2em;
-    width: 200px;
-  }
-}
-/* 기존 스타일은 그대로 유지 */
-
 /* 서브메뉴 스타일 */
 .submenu {
   overflow: hidden;
@@ -81,13 +73,10 @@ body {
   opacity: 0;
 }
 
-/* 서브메뉴가 열렸을 때의 스타일 */
 .submenu.open {
-  max-height: 500px; /* 충분히 큰 값으로 설정 */
   opacity: 1;
 }
 
-/* 서브메뉴 아이템 스타일 */
 .submenu li {
   margin: 10px 0;
 }
@@ -108,29 +97,27 @@ body {
   background-color: #d0d0d0;
 }
 
-/* 메인 메뉴 아이템 수정 */
 .menu-item a.has-submenu {
   cursor: pointer;
 }
+
 /* 콘텐츠 컨테이너 스타일 */
 .content-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
-}
-<link rel="stylesheet" href="../assets/css/styles.css">
-.submenu.open {
-  max-height: 500px; /* 이 부분을 제거하거나 기본값으로 유지 */
-}
-.content-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  /* text-align: center; 이 부분을 제거 */
 }
 
 .content-container h1 {
-  text-align: center; /* 제목만 가운데 정렬 */
+  text-align: center;
 }
 
+/* FAQ 페이지 스타일 */
+.faq-item p {
+  display: none;
+  margin-left: 20px;
+}
+
+.faq-item h2 {
+  cursor: pointer;
+}
