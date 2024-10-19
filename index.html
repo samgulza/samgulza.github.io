@@ -10,29 +10,51 @@
   </style>
 </head>
 <body>
+  <!-- 스플래시 스크린 -->
   <div class="splash-screen">
     <h1>삼성서울병원 암7서</h1>
   </div>
 
+  <!-- 메인 컨텐츠 -->
   <div class="container">
     <div class="menu">
+      <!-- 수술 전 교육 -->
       <div class="menu-item">
-        <a href="{{ '/categories/#수술-전-교육' | relative_url }}">💉 수술 전 교육</a>
+        <a href="#" class="has-submenu">💉 수술 전 교육</a>
+        <ul class="submenu">
+          <li><a href="pages/pre-op-colon.html">결장암</a></li>
+          <li><a href="pages/pre-op-rectal.html">직장암</a></li>
+          <li><a href="pages/pre-op-anal.html">항문암</a></li>
+        </ul>
       </div>
+      <!-- 수술 후 교육 -->
       <div class="menu-item">
-        <a href="{{ '/categories/#수술-후-교육' | relative_url }}">🩺 수술 후 교육</a>
+        <a href="#" class="has-submenu">🩺 수술 후 교육</a>
+        <ul class="submenu">
+          <li><a href="pages/post-op-colon.html">결장암</a></li>
+          <li><a href="pages/post-op-rectal.html">직장암</a></li>
+          <li><a href="pages/post-op-anal.html">항문암</a></li>
+        </ul>
       </div>
+      <!-- 퇴원 교육 -->
       <div class="menu-item">
-        <a href="{{ '/categories/#퇴원-교육' | relative_url }}">🏥 퇴원 교육</a>
+        <a href="#" class="has-submenu">🏥 퇴원 교육</a>
+        <ul class="submenu">
+          <li><a href="pages/discharge-colon.html">결장암</a></li>
+          <li><a href="pages/discharge-rectal.html">직장암</a></li>
+          <li><a href="pages/discharge-anal.html">항문암</a></li>
+          <li><a href="pages/discharge-stoma.html">장루</a></li>
+        </ul>
       </div>
+      <!-- 자주 묻는 질문 -->
       <div class="menu-item">
-        <a href="{{ '/categories/#자주-묻는-질문' | relative_url }}">❓ 자주 묻는 질문</a>
+        <a href="pages/faq.html">❓ 자주 묻는 질문</a>
       </div>
     </div>
   </div>
 
   <script>
-    // 스플래시 스크린을 일정 시간 후에 숨김
+    // 스플래시 스크린 제어
     window.onload = function() {
       setTimeout(function() {
         document.querySelector('.splash-screen').style.opacity = '0';
@@ -40,7 +62,21 @@
           document.querySelector('.splash-screen').style.display = 'none';
           document.querySelector('.container').style.display = 'flex';
         }, 500);
-      }, 2000); // 2초 후에 스플래시 스크린이 사라집니다.
+      }, 2000);
+
+      // 서브메뉴 토글 기능 추가
+      var submenuLinks = document.querySelectorAll('.has-submenu');
+      submenuLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var submenu = this.nextElementSibling;
+          if (submenu.style.maxHeight) {
+            submenu.style.maxHeight = null;
+          } else {
+            submenu.style.maxHeight = submenu.scrollHeight + "px";
+          }
+        });
+      });
     }
   </script>
 </body>
