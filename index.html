@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- ... 기존 내용 ... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼성서울병원 암7서</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+  </style>
 </head>
 <body>
   <!-- 스플래시 스크린 -->
@@ -64,14 +70,17 @@
         link.addEventListener('click', function(e) {
           e.preventDefault();
           var submenu = this.nextElementSibling;
-          if (submenu.classList.contains('open')) {
+          if (submenu.style.maxHeight) {
+            submenu.style.maxHeight = null;
             submenu.classList.remove('open');
           } else {
-            // 다른 서브메뉴 닫기 (선택 사항)
+            // 다른 서브메뉴 닫기
             var allSubmenus = document.querySelectorAll('.submenu');
             allSubmenus.forEach(function(otherSubmenu) {
+              otherSubmenu.style.maxHeight = null;
               otherSubmenu.classList.remove('open');
             });
+            submenu.style.maxHeight = submenu.scrollHeight + "px";
             submenu.classList.add('open');
           }
         });
