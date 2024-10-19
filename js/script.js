@@ -7,3 +7,16 @@ window.onload = function() {
     }, 500);
   }, 2000);
 }
+if (submenu.classList.contains('open')) {
+  submenu.style.maxHeight = null;
+  submenu.classList.remove('open');
+} else {
+  // 다른 서브메뉴 닫기 (선택 사항)
+  var allSubmenus = document.querySelectorAll('.submenu');
+  allSubmenus.forEach(function(otherSubmenu) {
+    otherSubmenu.style.maxHeight = null;
+    otherSubmenu.classList.remove('open');
+  });
+  submenu.style.maxHeight = submenu.scrollHeight + "px";
+  submenu.classList.add('open');
+}
