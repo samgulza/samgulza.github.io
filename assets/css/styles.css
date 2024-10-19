@@ -120,3 +120,17 @@ body {
   text-align: center;
 }
 <link rel="stylesheet" href="../assets/css/styles.css">
+.submenu.open {
+  max-height: 500px; /* 이 부분을 제거하거나 기본값으로 유지 */
+}
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  /* text-align: center; 이 부분을 제거 */
+}
+
+.content-container h1 {
+  text-align: center; /* 제목만 가운데 정렬 */
+}
+
