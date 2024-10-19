@@ -1,23 +1,47 @@
----
-layout: default
-title: "홈"
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼성서울병원 암7서</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+  </style>
+</head>
+<body>
+  <div class="splash-screen">
+    <h1>삼성서울병원 암7서</h1>
+  </div>
 
-<div class="container">
-  <h2>환영합니다!</h2>
-  <p>삼성서울병원 암7서에 오신 것을 환영합니다.</p>
-  <div class="menu">
-    <div class="menu-item">
-      <a href="{{ '/categories/#수술-전-교육' | relative_url }}">💉 수술 전 교육</a>
-    </div>
-    <div class="menu-item">
-      <a href="{{ '/categories/#수술-후-교육' | relative_url }}">🩺 수술 후 교육</a>
-    </div>
-    <div class="menu-item">
-      <a href="{{ '/categories/#퇴원-교육' | relative_url }}">🏥 퇴원 교육</a>
-    </div>
-    <div class="menu-item">
-      <a href="{{ '/categories/#자주-묻는-질문' | relative_url }}">❓ 자주 묻는 질문</a>
+  <div class="container">
+    <div class="menu">
+      <div class="menu-item">
+        <a href="{{ '/categories/#수술-전-교육' | relative_url }}">💉 수술 전 교육</a>
+      </div>
+      <div class="menu-item">
+        <a href="{{ '/categories/#수술-후-교육' | relative_url }}">🩺 수술 후 교육</a>
+      </div>
+      <div class="menu-item">
+        <a href="{{ '/categories/#퇴원-교육' | relative_url }}">🏥 퇴원 교육</a>
+      </div>
+      <div class="menu-item">
+        <a href="{{ '/categories/#자주-묻는-질문' | relative_url }}">❓ 자주 묻는 질문</a>
+      </div>
     </div>
   </div>
-</div>
+
+  <script>
+    // 스플래시 스크린을 일정 시간 후에 숨김
+    window.onload = function() {
+      setTimeout(function() {
+        document.querySelector('.splash-screen').style.opacity = '0';
+        setTimeout(function() {
+          document.querySelector('.splash-screen').style.display = 'none';
+          document.querySelector('.container').style.display = 'flex';
+        }, 500);
+      }, 2000); // 2초 후에 스플래시 스크린이 사라집니다.
+    }
+  </script>
+</body>
+</html>
