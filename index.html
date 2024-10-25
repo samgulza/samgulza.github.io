@@ -8,7 +8,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
 </head>
 <body>
   <!-- 스플래시 스크린 -->
@@ -23,9 +22,9 @@
       <div class="menu-item">
         <a href="#" class="has-submenu">💉 수술 전 교육</a>
         <ul class="submenu">
-          <li><a href="#" data-md="pre-op-colon.md">결장암</a></li>
-          <li><a href="#" data-md="pre-op-rectal.md">직장암</a></li>
-          <li><a href="#" data-md="pre-op-anal.md">항문암</a></li>
+          <li><a href="pages/pre-op-colon.html">결장암</a></li>
+          <li><a href="pages/pre-op-rectal.html">직장암</a></li>
+          <li><a href="pages/pre-op-anal.html">항문암</a></li>
         </ul>
       </div>
       <!-- 수술 후 교육 -->
@@ -52,7 +51,6 @@
         <a href="pages/faq.html">❓ 자주 묻는 질문</a>
       </div>
     </div>
-    <div id="content"></div>
   </div>
 
   <script>
@@ -85,19 +83,6 @@
             submenu.style.maxHeight = submenu.scrollHeight + "px";
             submenu.classList.add('open');
           }
-        });
-      });
-
-      // 마크다운 로드 및 렌더링
-      document.querySelectorAll('a[data-md]').forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const mdFile = this.getAttribute('data-md');
-          fetch(`pages/${mdFile}`)
-            .then(response => response.text())
-            .then(text => {
-              document.getElementById('content').innerHTML = marked(text);
-            });
         });
       });
     }
