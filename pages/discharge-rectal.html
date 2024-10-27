@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퇴원교육 - 장루</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+    }
+    ul, ol {
+      padding-left: 2em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="content-container" id="content">
+    <!-- 마크다운 내용이 여기에 로드됩니다 -->
+  </div>
+
+  <script>
+    const markdown = `
+# 장루 수술 후 교육
+-------------------------------------------------------------
+## 밑에 수정시 마크다운을 사용 하고 있습니다
+## 링크를 확인 하세요☺️[https://blog.naver.com/dorergiverny/223051779299]
+
+
+
+
+## 주의사항
+- 수술 후 회복 과정과 주의사항에 대해 미리 숙지하세요.
+
+자세한 내용은 담당 의사나 간호사와 상담해 주시기 바랍니다.
+    `;
+
+    document.getElementById('content').innerHTML = marked.parse(markdown);
+  </script>
+</body>
+</html>
