@@ -24,6 +24,24 @@
     li {
       margin-bottom: 0.5em;
     }
+    .back-button {
+      display: block;
+      width: 200px;
+      margin: 40px auto 0;
+      padding: 15px 0;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+</style>
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -31,6 +49,8 @@
   <div class="content-container" id="content">
     <!-- 마크다운 내용이 여기에 로드됩니다 -->
   </div>
+
+  <button class="back-button" onclick="history.back()">뒤로가기</button>
 
   <script>
     const markdown = `
