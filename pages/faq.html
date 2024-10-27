@@ -7,36 +7,63 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+    }
+    ul, ol {
+      padding-left: 2em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+    .back-button {
+      display: block;
+      width: 200px;
+      margin: 40px auto 0;
+      padding: 15px 0;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    .back-button:hover {
+      background-color: #0056b3;
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <div class="content-container">
-    <h1>자주 묻는 질문</h1>
-    <!-- 자주 묻는 질문 내용 추가 -->
-    <div class="faq-item">
-      <h2>질문 1: 여기에 질문 제목을 입력하세요.</h2>
-      <p>답변: 여기에 답변 내용을 입력하세요.</p>
-    </div>
-    <div class="faq-item">
-      <h2>질문 2: 여기에 질문 제목을 입력하세요.</h2>
-      <p>답변: 여기에 답변 내용을 입력하세요.</p>
-    </div>
-    <!-- 더 많은 질문과 답변 추가 가능 -->
+  <div class="content-container" id="content">
+    <!-- 마크다운 내용이 여기에 로드됩니다 -->
   </div>
+
+  <button class="back-button" onclick="history.back()">뒤로가기</button>
+
+  <script>
+    const markdown = `
+# 자주 묻는 질문
+
+## 질문 1: 여기에 질문 제목을 입력하세요.🤗
+답변: 여기에 답변 내용을 입력하세요. (*/ω＼*)
+
+## 질문 2: 여기에 질문 제목을 입력하세요.😂
+답변: 여기에 답변 내용을 입력하세요. 
+
+<!-- 더 많은 질문과 답변 추가 가능 -->
+    `;
+
+    document.getElementById('content').innerHTML = marked.parse(markdown);
+  </script>
 </body>
 </html>
-<script>
-  window.onload = function() {
-    var faqItems = document.querySelectorAll('.faq-item h2');
-    faqItems.forEach(function(item) {
-      item.addEventListener('click', function() {
-        var answer = this.nextElementSibling;
-        if (answer.style.display === 'block') {
-          answer.style.display = 'none';
-        } else {
-          answer.style.display = 'block';
-        }
-      });
-    });
-  }
-</script>
