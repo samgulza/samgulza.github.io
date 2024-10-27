@@ -7,16 +7,47 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .header {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #007bff; /* 스플래시 화면의 파란색 */
+      color: white;
+      padding: 20px 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+    .menu {
+      max-width: 800px;
+      width: 100%;
+    }
+    .menu-item a {
+      display: block;
+      padding: 10px;
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eaecef;
+    }
+    .menu-item a:hover {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
-  <!-- 스플래시 스크린 -->
-  <div class="splash-screen">
-    <h1>삼성서울병원 암7서</h1>
+  <!-- 중앙에 정렬된 제목 -->
+  <div class="header">
+    🏥 삼성서울병원 암병원 7서 병동
   </div>
 
   <!-- 메인 컨텐츠 -->
-  <div class="container" style="display: none;">
+  <div class="container">
     <div class="menu">
       <!-- 수술 전 교육 -->
       <div class="menu-item">
@@ -54,23 +85,8 @@
   </div>
 
   <script>
-    // 스플래시 스크린 제어
+    // 서브메뉴 토글 기능
     window.onload = function() {
-      if (!localStorage.getItem('splashShown')) {
-        setTimeout(function() {
-          document.querySelector('.splash-screen').style.opacity = '0';
-          setTimeout(function() {
-            document.querySelector('.splash-screen').style.display = 'none';
-            document.querySelector('.container').style.display = 'flex';
-            localStorage.setItem('splashShown', 'true');
-          }, 500);
-        }, 2000);
-      } else {
-        document.querySelector('.splash-screen').style.display = 'none';
-        document.querySelector('.container').style.display = 'flex';
-      }
-
-      // 서브메뉴 토글 기능
       var submenuLinks = document.querySelectorAll('.has-submenu');
       submenuLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
