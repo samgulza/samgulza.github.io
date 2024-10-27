@@ -16,7 +16,7 @@
   </div>
 
   <!-- 메인 컨텐츠 -->
-  <div class="container">
+  <div class="container" style="display: none;">
     <div class="menu">
       <!-- 수술 전 교육 -->
       <div class="menu-item">
@@ -56,13 +56,19 @@
   <script>
     // 스플래시 스크린 제어
     window.onload = function() {
-      setTimeout(function() {
-        document.querySelector('.splash-screen').style.opacity = '0';
+      if (!localStorage.getItem('splashShown')) {
         setTimeout(function() {
-          document.querySelector('.splash-screen').style.display = 'none';
-          document.querySelector('.container').style.display = 'flex';
-        }, 500);
-      }, 2000);
+          document.querySelector('.splash-screen').style.opacity = '0';
+          setTimeout(function() {
+            document.querySelector('.splash-screen').style.display = 'none';
+            document.querySelector('.container').style.display = 'flex';
+            localStorage.setItem('splashShown', 'true');
+          }, 500);
+        }, 2000);
+      } else {
+        document.querySelector('.splash-screen').style.display = 'none';
+        document.querySelector('.container').style.display = 'flex';
+      }
 
       // 서브메뉴 토글 기능
       var submenuLinks = document.querySelectorAll('.has-submenu');
